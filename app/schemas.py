@@ -1,6 +1,7 @@
 from typing import Dict
 from pydantic import BaseModel
 
+
 class EmployeeBase(BaseModel):
     name: str
     last_name: str

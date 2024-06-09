@@ -1,7 +1,8 @@
 import bcrypt
-from schemas import Employee, EmployeeCreate
-from models import Employee as EmployeeModel
+from app.schemas import Employee, EmployeeCreate
+from app.models import Employee as EmployeeModel
 from sqlalchemy.orm import Session
+
 
 
 def get_employee(db: Session, employee_id: int):
