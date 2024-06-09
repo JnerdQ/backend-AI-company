@@ -5,10 +5,6 @@ venv/
 # Ignorar archivos compilados de Python
 __pycache__/
 *.py[cod]
-*$py.class
-
-# Ignorar bases de datos locales
-*.db
 
 # Ignorar archivos de configuración de VSCode
 .vscode/
