@@ -1,4 +1,4 @@
-# Ignorar el directorio de caché de Python
+# Ignorar el directorio de cachd de Python
 __pycache__
 *.pyc
 *.pyo
@@ -11,7 +11,7 @@ venv
 .git
 .gitignore
 
-# Ignorar archivos de configuración del editor
+# Ignorar archivos de configuracion del editor
 .vscode/
 .idea/
 

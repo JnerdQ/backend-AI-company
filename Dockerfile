@@ -13,10 +13,10 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 # Copia el archivo de base de datos
 COPY ./database.db /code/database.db
 
-# Copia el resto de los archivos de la aplicación al directorio de trabajo
+# Copia el resto de los archivos de la aplicacion al directorio de trabajo
 COPY . /code
 
-# Expone el puerto que se usará
+# Expone el puerto que se va a usar
 EXPOSE 4000
 
 # Comando para correr la aplicación usando uvicorn
