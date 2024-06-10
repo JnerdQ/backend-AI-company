@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Welcome to the Backend AI Company project! This project is the server-side part of our AI company system. It is built using FastAPI, a modern web framework for building APIs with Python.
+Welcome to the Backend AI Company project! This project is the server-side part of an AI company system. It is built using FastAPI, a modern web framework for building APIs with Python.
 
 ## Prerequisites
 
