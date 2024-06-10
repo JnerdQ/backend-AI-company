@@ -63,7 +63,7 @@ def authenticate_employee(auth_data: schemas.EmployeeAuthenticate, db: Session =
     db_employee = crud.authenticate_employee(db, email=auth_data.email, password=auth_data.password)
     if db_employee is None:
         raise HTTPException(status_code=400, detail="Invalid credentials")
-    return {"message": "Employee authenticated successfully"}
+    return {"employee": db_employee, "message": "Employee authenticated successfully"}
 
 # Delete employee by id
 @app.delete("/employee/{employee_id}", tags=["employee"])
