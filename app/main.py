@@ -60,10 +60,23 @@ def read_employee(employee_id: int, db: Session = Depends(get_db)):
 # Authenticate employee
 @app.post("/employee/authenticate", tags=["employee"])
 def authenticate_employee(auth_data: schemas.EmployeeAuthenticate, db: Session = Depends(get_db)):
-    db_employee = crud.authenticate_employee(db, email=auth_data.email, password=auth_data.password)
-    if db_employee is None:
-        raise HTTPException(status_code=400, detail="Invalid credentials")
-    return {"employee": db_employee, "message": "Employee authenticated successfully"}
+    auth_result = crud.authenticate_employee(db, email=auth_data.email, password=auth_data.password)
+    if auth_result == "email_not_found":
+        raise HTTPException(status_code=400, detail="Email not found")
+    elif auth_result == "incorrect_password":
+        raise HTTPException(status_code=400, detail="Incorrect password")
+    
+    employee_data = {
+        "name": auth_result.name,
+        "last_name": auth_result.last_name,
+        "email": auth_result.email,
+        "position": auth_result.position,
+        "age": auth_result.age,
+        "is_active": auth_result.is_active,
+        "skills": auth_result.skills  
+    }
+
+    return {"employee": employee_data, "message": "Employee authenticated successfully"}
 
 # Delete employee by id
 @app.delete("/employee/{employee_id}", tags=["employee"])

@@ -43,7 +43,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 def authenticate_employee(db: Session, email: str, password: str):
     user = get_employee_by_email(db, email)
     if not user:
-        return None
+        return "email_not_found"
     if not verify_password(password, user.hashed_password):
-        return None
+        return "incorrect_password"
     return user

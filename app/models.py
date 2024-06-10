@@ -14,3 +14,6 @@ class Employee(Base):
     age = Column(Integer, nullable=False)
     is_active = Column(Boolean, default=True)
     skills = Column(JSON, nullable=False)
+    
+    
+    
